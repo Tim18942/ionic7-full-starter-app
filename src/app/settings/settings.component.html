@@ -1,18 +1,17 @@
-
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
-    <ion-title>Settings</ion-title>
+    <ion-title> Основные настройки</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
   <ion-list>
     <ion-item>
-      <ion-select class="always-flip" toggleIcon="caret-down-sharp" interface="popover" label="Selected Theme"
-        placeholder="Theme">
+      <ion-select class="always-flip" toggleIcon="caret-down-sharp" interface="popover" label="Theme"
+        placeholder="Default">
         <ion-select-option value="Dark">Dark</ion-select-option>
         <ion-select-option value="White">White</ion-select-option>
         <ion-select-option value="Black">Black</ion-select-option>
@@ -38,9 +37,41 @@
       </ion-select>
     </ion-item>
   </ion-list>
+  <br>
+  <br>
 
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Настройки уведомлений</ion-title>
+    </ion-toolbar>
+</ion-header>
 
-  <ion-button expand="Назад">Назад</ion-button>
+<ion-list>
+  <ion-item>
+    <ion-checkbox label-placement="start">Получать уведомления от приложения</ion-checkbox>
+  </ion-item>
+</ion-list>
+  <br> 
 
+<ion-select label="Звук уведомления" label-placement="floating" fill="outline">
+  <ion-select-option value="Ring">Ring</ion-select-option>
+  <ion-select-option value="Call">Call</ion-select-option>
+  <ion-select-option value="Din-Don">Din-Don</ion-select-option>
+</ion-select>
+<br>
+<br>  
+<ion-button color="danger" expand="Назад">Назад</ion-button>
+<ion-button color= "success" id="present-alert">Применить</ion-button>
+<ion-alert
+  trigger="present-alert"
+  header="Настройки применены"
+  message="Возможно, придется перезапустить приложение."
+></ion-alert>
 
-
+<script>
+  const alert = document.querySelector('ion-alert');
+  alert.buttons = ['Action'];
+</script>
